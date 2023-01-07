@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalR Chat Application</title>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/signalr.min.js"></script>
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script>
+        $(document).ready(() => {
+            $(".disabled").attr("disabled", "disabled");
+
+            $(".users").click(function () {
+                $(".users").each((index, item) => {
+                    item.classList.remove("active");
+                });
+                $(this).addClass("active");
+            })
+
+            $("#btnGonder").click(() => {
+                var x = $(".message").clone();
+                x.removeClass("message");
+                x.find("h5")[1].innerHTML = ""; //Ahmeti gösterir
+                x.find("h5")[0].innerHTML = ""; //Seni gösterir
+                $(".message").append(x);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <!--Sol Menü-->
+                <div class="col-md-3">
+                    <!--Oda-->
+                    <input class="form-control form-control-lg disabled" type="text" placeholder="Oda Adi">
+                    <button type="button" class="btn btn-info rightButton disabled">Oda Olustur</button>
+                    <select size="5" style="width: 100%;" class="form-select disabled" multiple>
+                        <option selected value="-1">Odalar</option>
+                    </select>
+                    <button type="button" class="btn btn-primary rightButton disabled">Secili Odalara Gir</button>
+                    <!--Oda-->
+                    <br><br><br>
+                    <!--Clientler-->
+                    <div class="list-group">
+                        <a class="list-group-item list-group-item-action users active">Tümü</a>
+                        <a class="list-group-item list-group-item-action users active" aria-current="true">Test</a>
+                    </div>
+                    <!--Clientler-->
+                </div>
+                <div class="col-md-6">
+                    <!--Mesajlasma-->
+                    <textarea class="form-control" style="margin-top: 5px;"
+                        placeholder="Iletilecek mesaji buraya giriniz." rows="3"></textarea>
+
+                    <button type="button" class="btn btn-light rightButton" id="btnGonder">Gönder</button>
+
+                    <br><br><br>
+
+                    <div class="list-group">
+                        <a class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Ahmet</h5>
+                                <h5 class="mb-2">Sen</h5>
+                            </div>
+                            <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ratione?</p>
+                            <small>Lorem ipsum dolor sit amet.</small>
+                        </a>
+                    </div>
+                    <!--Mesajlasma-->
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Adiniz/Nick">
+                    <button class="btn btn-success leftButton" type="button">Giris Yap</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</body>
+
+</html>
