@@ -86,6 +86,7 @@
                 _message.find("h5")[0].innerHTML = nickname;
                 $(".messages").append(_message);
             })
+            
             $("#btnSend").click(() => {
                 const clientName = $(".users.active").first().html();
                 const message = $("#txtMessage").val();
@@ -145,7 +146,9 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="row">
+                <!-- Sol Menü -->
                 <div class="col-md-3">
+                        <!-- Oda -->
                     <input class="form-control form-control-lg disabled" type="text" placeholder="Oda Adını Giriniz"
                         id="groupName" />
                     <br>
@@ -161,14 +164,18 @@
                     <button type="button" id="btnJoinGroups" class="btn btn-primary rightButton disabled">
                         Seçili Odalara Gir
                     </button>
+                        <!-- Oda -->
                     <br /><br /><br />
+                     <!-- Clientlar -->
                     <div class="list-group clients">
                         <a class="list-group-item list-group-item-action users active">Tümü
                         </a>
                         <div id="_clients"></div>
                     </div>
+                       <!-- Clientlar -->
                 </div>
                 <div class="col-md-6">
+                    <!-- Mesajlasma -->
                     <div class="alert alert-success" id="clientDurumMessages" style="display: none"></div>
                     <div class="alert alert-success" id="clientJoinedTrigger" style="display: none"></div>
                     <textarea rows="3" class="form-control" style="margin-top: 5px" placeholder="Mesajınız"
@@ -192,6 +199,7 @@
 
                         </a>
                     </div>
+                      <!-- Mesajlasma -->
                 </div>
                 <div class="col-md-3">
                     <input class="form-control form-control-lg" type="text" placeholder="Adınız/Nickname"
