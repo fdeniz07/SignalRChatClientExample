@@ -81,7 +81,7 @@
             connection.on("receiveMessage", (message, nickname) => {
                 //console.log(message)
                 const _message = $(".message").clone();
-                _message.removeClass("message");
+                _message.removeClass("message"); //Klonlanarak üretilen mesaji siliyoruz ki münferit kayitlar gelmesin
                 _message.find("p").html(message);
                 _message.find("h5")[0].innerHTML = nickname;
                 $(".messages").append(_message);
@@ -192,10 +192,10 @@
                     <div class="list-group messages">
                         <a class="list-group-item list-group-item-action message" aria-current="true">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"></h5>//Kimden
-                                <h5 class="mb-2"></h5>//Kime
+                                <h5 class="mb-1"></h5> <!--Kimden-->
+                                <h5 class="mb-2"></h5><!--Kime-->
                             </div>
-                            <p class="mb-1"></p>//Mesaj
+                            <p class="mb-1"></p><!--Mesaj-->
                         </a>
                     </div>
                     <!-- Mesajlasma -->
