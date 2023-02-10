@@ -79,14 +79,14 @@
                 });
             });
             connection.on("receiveMessage", (message, nickname) => {
-
+                //console.log(message)
                 const _message = $(".message").clone();
                 _message.removeClass("message");
                 _message.find("p").html(message);
                 _message.find("h5")[0].innerHTML = nickname;
                 $(".messages").append(_message);
             })
-            
+
             $("#btnSend").click(() => {
                 const clientName = $(".users.active").first().html();
                 const message = $("#txtMessage").val();
@@ -148,7 +148,7 @@
             <div class="row">
                 <!-- Sol Menü -->
                 <div class="col-md-3">
-                        <!-- Oda -->
+                    <!-- Oda -->
                     <input class="form-control form-control-lg disabled" type="text" placeholder="Oda Adını Giriniz"
                         id="groupName" />
                     <br>
@@ -164,15 +164,15 @@
                     <button type="button" id="btnJoinGroups" class="btn btn-primary rightButton disabled">
                         Seçili Odalara Gir
                     </button>
-                        <!-- Oda -->
+                    <!-- Oda -->
                     <br /><br /><br />
-                     <!-- Clientlar -->
+                    <!-- Clientlar -->
                     <div class="list-group clients">
                         <a class="list-group-item list-group-item-action users active">Tümü
                         </a>
                         <div id="_clients"></div>
                     </div>
-                       <!-- Clientlar -->
+                    <!-- Clientlar -->
                 </div>
                 <div class="col-md-6">
                     <!-- Mesajlasma -->
@@ -192,14 +192,13 @@
                     <div class="list-group messages">
                         <a class="list-group-item list-group-item-action message" aria-current="true">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"></h5>
-                                <h5 class="mb-2"></h5>
+                                <h5 class="mb-1"></h5>//Kimden
+                                <h5 class="mb-2"></h5>//Kime
                             </div>
-                            <p class="mb-1"></p>
-
+                            <p class="mb-1"></p>//Mesaj
                         </a>
                     </div>
-                      <!-- Mesajlasma -->
+                    <!-- Mesajlasma -->
                 </div>
                 <div class="col-md-3">
                     <input class="form-control form-control-lg" type="text" placeholder="Adınız/Nickname"
